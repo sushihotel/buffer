@@ -48,6 +48,21 @@
         <script src="data/BufferGpkgShortestPath25km_16.js"></script>
         <script src="data/Dontuse13_Stores_17.js"></script>
         <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+        }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         })
@@ -70,6 +85,14 @@
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
         function pop_BufferAllStores35km_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -372,6 +395,14 @@
         });
         bounds_group.addLayer(layer_BufferAllStores35km_1);
         function pop_BufferAllStores3km_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -674,6 +705,14 @@
         });
         bounds_group.addLayer(layer_BufferAllStores3km_2);
         function pop_BufferAllStores25km_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -977,6 +1016,14 @@
         bounds_group.addLayer(layer_BufferAllStores25km_3);
         map.addLayer(layer_BufferAllStores25km_3);
         function pop_Buffer7Stores35km_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -1279,6 +1326,14 @@
         });
         bounds_group.addLayer(layer_Buffer7Stores35km_4);
         function pop_Buffer7Stores3km_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -1581,6 +1636,14 @@
         });
         bounds_group.addLayer(layer_Buffer7Stores3km_5);
         function pop_Buffer7Stores25km_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -1883,6 +1946,14 @@
         });
         bounds_group.addLayer(layer_Buffer7Stores25km_6);
         function pop_BufferGpkg7_Tradearea_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -2032,6 +2103,14 @@
         bounds_group.addLayer(layer_BufferGpkg7_Tradearea_7);
         map.addLayer(layer_BufferGpkg7_Tradearea_7);
         function pop_BufferGpkg32POICOUNT35km_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -2233,6 +2312,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkg32POICOUNT35km_8);
         function pop_BufferGpkg32POICOUNT3km_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -2434,6 +2521,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkg32POICOUNT3km_9);
         function pop_BufferGpkg32POICOUNT25km_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -2635,6 +2730,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkg32POICOUNT25km_10);
         function pop_BufferGpkg12POICOUNT35km_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -2944,6 +3047,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkg12POICOUNT35km_11);
         function pop_BufferGpkg12POICOUNT3km_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -3249,6 +3360,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkg12POICOUNT3km_12);
         function pop_BufferGpkg12POICOUNT25km_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -3555,6 +3674,14 @@
         bounds_group.addLayer(layer_BufferGpkg12POICOUNT25km_13);
         map.addLayer(layer_BufferGpkg12POICOUNT25km_13);
         function pop_BufferGpkgShortestPath35km_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -3848,6 +3975,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkgShortestPath35km_14);
         function pop_BufferGpkgShortestPath3km_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -4138,6 +4273,14 @@
         });
         bounds_group.addLayer(layer_BufferGpkgShortestPath3km_15);
         function pop_BufferGpkgShortestPath25km_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -4427,7 +4570,16 @@
             style: style_BufferGpkgShortestPath25km_16_0,
         });
         bounds_group.addLayer(layer_BufferGpkgShortestPath25km_16);
+        map.addLayer(layer_BufferGpkgShortestPath25km_16);
         function pop_Dontuse13_Stores_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
